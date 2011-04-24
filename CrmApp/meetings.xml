@@ -1,0 +1,44 @@
+ <meetings>
+<meet>
+  <date>2003-07-28 13:17:29</date>
+  <worker>20</worker>
+  <client>42</client>
+  <addit>some info</addit>
+</meet>
+
+<meet>
+  <date>2013-07-28 13:17:29</date>
+  <worker>21</worker>
+  <client>22</client>
+  <addit>some info</addit>
+</meet>
+
+<meet>
+  <date>2005-07-28 13:17:29</date>
+  <worker>20</worker>
+  <client>22</client>
+  <addit>some info</addit>
+</meet>
+
+<meet>
+  <date>2003-07-28 13:17:29</date>
+  <worker>20</worker>
+  <client>62</client>
+</meet>
+
+<meet>
+  <date>2001-07-28 13:17:29</date>
+  <worker>12</worker>
+  <client>2</client>
+  <addit>some info</addit>
+</meet>
+
+<meet>
+  <date>1999-07-28 13:17:29</date>
+  <worker>4</worker>
+  <client>42</client>
+  <addit>some info</addit>
+</meet>
+
+
+</meetings>
