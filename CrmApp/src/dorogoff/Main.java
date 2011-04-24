@@ -161,8 +161,9 @@ public class Main {
         if (new File(filename).exists()) {
             System.out.println("File " + filename + "already exist, you want to overwrite them?");
             System.out.print("Type yes to overwrite, or type new filename: ");
+            // предложим поменять имя файла
             BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-            String answer="";
+            String answer = "";
             try {
                 answer = reader.readLine();
             } catch (IOException e) {
@@ -174,12 +175,12 @@ public class Main {
             }
         }
         // формируем запрос на получение встреч
-        String queryString;
-        queryString = "SELECT * from meetings where datum between '" + config[4] + "' AND '" + config[5]+"'";
-        //queryString = "SELECT * from meetings";
+        String queryString = "SELECT * from meetings where datum between '" + config[4] + "' AND '" + config[5] + "'";
         try {
+            // получим встречи
             resSet = state.executeQuery(queryString);
             OutputStreamWriter out = new OutputStreamWriter(new FileOutputStream(filename));
+            // сформируем xmk файл
             out.write("<meetings>\n");
             while (resSet.next()) {
                 // если что есть пишем в файл
@@ -192,23 +193,22 @@ public class Main {
             }
             out.write("</meetings>\n");
             out.close();
-
         } catch (SQLException e) {
-            System.out.println("SQLError: " + e.getMessage());
+            System.out.println("SQL Error: ошибка входых данных " + e.getMessage());
         } catch (FileNotFoundException e) {
             System.out.println("Error: file not found");
         } catch (IOException e) {
             System.out.println("Error: " + e.getMessage());
         }
-
-
     }
 
-    // метод для поулчения настроек к БД из файла, формат:
+    // метод для получения настроек к БД из файла, формат:
     // url к базе
     // username
     // password
     // драйвер org.firebirdsql.jdbc.FBDriver
+    // дата начала периода
+    // дата конца периода
     public static void getConfig() {
         try {
             FileInputStream fStream = new FileInputStream("config.txt");
