@@ -1,0 +1,6 @@
+jdbc:firebirdsql://192.168.1.8//var/lib/db/crm.fdb
+sysdba
+masterkey
+org.firebirdsql.jdbc.FBDriver
+15.05.2001 20:37:47
+20.05.2005 20:37:47
